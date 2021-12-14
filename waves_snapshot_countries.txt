@@ -1,0 +1,67 @@
+AF,Afghanistan,snapshot,Asia
+AO,Angola,snapshot,Africa
+AR,Argentina,waves,South_America
+AU,Australia,snapshot,Australia
+AZ,Azerbaijan,snapshot,Asia
+BD,Bangladesh,waves,Asia
+BO,Bolivia,snapshot,South_America
+BR,Brazil,waves,South_America
+CA,Canada,snapshot,North_America
+CI,Cote d'Ivoire,snapshot,Africa
+CL,Chile,snapshot,South_America
+CM,Cameroon,snapshot,Africa
+CO,Colombia,waves,South_America
+DE,Germany,waves,Europe
+DZ,Algeria,snapshot,Africa
+EC,Ecuador,snapshot,South_America
+EE,Estonia,snapshot,Europe
+EG,Egypt,waves,Africa
+ES,Spain,snapshot,Europe
+FR,France,waves,Europe
+GB,United Kingdom,waves,Europe
+GE,Georgia,snapshot,Europe
+GH,Ghana,snapshot,Africa
+GT,Guatemala,snapshot,South_America
+HN,Honduras,snapshot,South_America
+ID,Indonesia,waves,Asia
+IN,India,waves,Asia
+IQ,Iraq,snapshot,Asia
+IT,Italy,waves,Europe
+JM,Jamaica,snapshot,North_America
+JP,Japan,waves,Asia
+KE,Kenya,snapshot,Africa
+KH,Cambodia,snapshot,Asia
+KR,South Korea,snapshot,Asia
+KZ,Kazakhstan,snapshot,Asia
+LK,Sri Lanka,snapshot,Asia
+MA,Morocco,snapshot,Africa
+MM,Myanmar,snapshot,Asia
+MN,Mongolia,snapshot,Asia
+MX,Mexico,waves,North_America
+MY,Malaysia,waves,Asia
+MZ,Mozambique,snapshot,Africa
+NG,Nigeria,waves,Africa
+NL,Netherlands,snapshot,Europe
+NP,Nepal,snapshot,Asia
+PE,Peru,snapshot,South_America
+PH,Philippines,waves,Asia
+PK,Pakistan,waves,Asia
+PL,Poland,waves,Europe
+PT,Portugal,snapshot,Europe
+RO,Romania,waves,Europe
+SD,Sudan,snapshot,Africa
+SG,Singapore,snapshot,Asia
+SN,Senegal,snapshot,Africa
+TH,Thailand,waves,Asia
+TR,Turkey,waves,Europe
+TT,Trinidad & Tobago,snapshot,South_America
+TW,Taiwan,snapshot,Asia
+TZ,Tanzania,snapshot,Africa
+UA,Ukraine,snapshot,Europe
+UG,Uganda,snapshot,Africa
+AE,United Arab Emirates,snapshot,Asia
+US,United States,waves,North_America
+UY,Uruguay,snapshot,South_America
+VE,Venezuela,snapshot,South_America
+VN,Vietnam,waves,Asia
+ZA,South Africa,snapshot,Africa

@@ -1,0 +1,279 @@
+{
+  "numeric_map": {
+    "survey_type": "None",
+    "progress": "None",
+    "finished": "None",
+    "duration": "None",
+    "start_date": "None",
+    "survey_information_provided": "None",
+    "survey_information_behavior": "None",
+    "survey_information_level": "None",
+    "survey_information_value": "None",
+    "survey_response_information_version": "None",
+    "eligible_for_information": "None",
+    "info_exposure_past_week": {
+      "A lot": 3,
+      "A moderate amount": 2,
+      "A little": 1,
+      "Nothing": 0
+    },
+    "info_exposure_more_less_wanted": {
+      "About the right amount": 2,
+      "More": 3,
+      "Much more": 4,
+      "Less": 1,
+      "Much less": 0
+    },
+    "knowledge_existing_treatments": {
+      "There is currently no drug treatment or vaccine for COVID-19": 1,
+      "I am unsure which is correct": 0,
+      "There is a drug to treat COVID-19": 0,
+      "There is a vaccine for COVID-19": 0,
+      "There is both a drug for treatment and a vaccine for COVID-19": 0
+    },
+    "know_positive_case": {
+      "Yes": 2,
+      "Prefer not to say": 1,
+      "No": 0
+    },
+    "vaccine_accept": {
+      "Yes": 2,
+      "Don't know": 1,
+      "No": 0,
+      "I have already been vaccinated": null
+    },
+    "healthcare_avoid_contact": {
+      "Yes": 1,
+      "No": 0
+    },
+    "healthcare_availability": {
+      "Yes": 2,
+      "No, I did not need an appointment": 1,
+      "No, I needed one and was not able": 0
+    },
+    "gender": {
+      "Other": 0,
+      "Male": 1,
+      "Female": 2
+    },
+    "age": {
+      "Under 20": 0,
+      "20-30": 1,
+      "31-40": 2,
+      "41-50": 3,
+      "51-60": 4,
+      "61-70": 5,
+      "71-80": 6,
+      "Over 80": 7
+    },
+    "education": {
+      "Graduate school": 4,
+      "College / university": 3,
+      "Secondary school": 2,
+      "Primary school": 1,
+      "Less than primary school": 0
+    },
+    "own_health": {
+      "Poor": 0,
+      "Fair": 1,
+      "Good": 2,
+      "Very good": 3,
+      "Excellent": 4
+    },
+    "us_state": "None",
+    "india_state": "None",
+    "density": "None",
+    "news_medium___split__": "None",
+    "news_sources___split__": "None",
+    "news_medium_trust___split__": {
+      "Trust": 2,
+      "Somewhat trust": 1,
+      "Do not trust": 0
+    },
+    "news_sources_trust___split__": {
+      "Trust": 2,
+      "Somewhat trust": 1,
+      "Do not trust": 0
+    },
+    "information_demand___split__": "None",
+    "knowledge_high_risk_groups___split__": "None",
+    "knowledge_spread": {
+      "Human contact, coughing or sneezing": 1,
+      "Other": 0,
+      "Dirt or pollution": 0,
+      "Exposure to animals": 0,
+      "Mosquito bites": 0
+    },
+    "knowledge_symptoms___split__": "None",
+    "distancing_familiarity": {
+      "I have heard of it and know what it means": 3,
+      "I have heard of it and have some idea of what it means": 2,
+      "I have heard of it but do not know what it means": 1,
+      "I have not heard of it": 0
+    },
+    "distancing_importance": {
+      "Slightly important": 1,
+      "Very important": 3,
+      "Extremely Important": 4,
+      "Moderately important": 2,
+      "Not at all important": 0
+    },
+    "distancing_norms___split__": "None",
+    "norms_vaccine": "None",
+    "risk_community": {
+      "Moderately dangerous": 2,
+      "Extremely dangerous": 4,
+      "Very dangerous": 3,
+      "Slightly dangerous": 1,
+      "Not at all dangerous": 0
+    },
+    "risk_infection": {
+      "Moderately likely": 2,
+      "Extremely likely": 4,
+      "Very likely": 3,
+      "Slightly likely": 1,
+      "Not at all likely": 0
+    },
+    "control_infection": {
+      "Neither agree or disagree": 2,
+      "Somewhat disagree": 1,
+      "Somewhat agree": 3,
+      "Strongly agree": 4,
+      "Strongly disagree": 0
+    },
+    "infection_severity": {
+      "Not at all serious": 0,
+      "Very serious": 2,
+      "Somewhat serious": 1
+    },
+    "prevention_distancing": {
+      "Sometimes": 2,
+      "Often": 3,
+      "Rarely": 1,
+      "Always": 4,
+      "Never": 0
+    },
+    "prevention_hand_washing": {
+      "Sometimes": 2,
+      "Often": 3,
+      "Rarely": 1,
+      "Always": 4,
+      "Never": 0
+    },
+    "measures_taken___split__": "None",
+    "effect_hand_washing": {
+      "Slightly effective": 1,
+      "Very effective": 3,
+      "Extremely effective": 4,
+      "Moderately effective": 2,
+      "Not effective at all": 0
+    },
+    "effect_mask": {
+      "Slightly effective": 1,
+      "Very effective": 3,
+      "Extremely effective": 4,
+      "Moderately effective": 2,
+      "Not effective at all": 0
+    },
+    "country_management": {
+      "Slightly well": 1,
+      "Very well": 3,
+      "Extremely well": 4,
+      "Moderately well": 2,
+      "Not well at all": 0
+    },
+    "community_management": {
+      "Slightly well": 1,
+      "Very well": 3,
+      "Extremely well": 4,
+      "Moderately well": 2,
+      "Not well at all": 0
+    },
+    "community_action_importance": {
+      "Slightly important": 1,
+      "Very important": 3,
+      "Extremely important": 4,
+      "Moderately important": 2,
+      "Not at all important": 0
+    },
+    "community_action_norms": {
+      "Slightly important": 1,
+      "Very important": 3,
+      "Extremely important": 4,
+      "Moderately important": 2,
+      "Not at all important": 0
+    },
+    "community_norms_social_gatherings_should_be_cancelled": "None",
+    "community_norms_a_general_curfew_should_be_enforced": "None",
+    "employed_2020": {
+      "Yes": 1,
+      "No": 0
+    },
+    "work_changes": "None",
+    "work_type": "None",
+    "work_industry": "None",
+    "locations_open___split__": "None",
+    "locations_would_attend___split__": "None",
+    "prevent_measures_restaurant___split__": {
+      "More likely to visit": 2,
+      "Doesn't affect my actions": 1,
+      "Less likely to visit": 0
+    },
+    "prevent_measures_health___split__": {
+      "More likely to visit": 2,
+      "Doesn't affect my actions": 1,
+      "Less likely to visit": 0
+    },
+    "prevent_measures_worship___split__": {
+      "More likely to visit": 2,
+      "Doesn't affect my actions": 1,
+      "Less likely to visit": 0
+    },
+    "prevent_measures_retail___split__": {
+      "More likely to visit": 2,
+      "Doesn't affect my actions": 1,
+      "Less likely to visit": 0
+    },
+    "display_order": "None",
+    "country": "None",
+    "reported_country": "None",
+    "community_norms___split__": "None",
+    "wave": "None",
+    "weight_demo": "None",
+    "weight_full_survey": "None",
+    "weight_internet_demo": "None",
+    "weight_internet_full_survey": "None",
+    "id": "None",
+    "prevention_mask": {
+      "Sometimes": 2,
+      "Often": 3,
+      "Rarely": 1,
+      "Always": 4,
+      "Never": 0
+    },
+    "future_masks": {
+      "Always": 4,
+      "Almost always": 3,
+      "When convenient": 2,
+      "Rarely": 1,
+      "Never": 0,
+      "-1": null
+    },
+    "future_dist": {
+      "Always": 4,
+      "Almost always": 3,
+      "When convenient": 2,
+      "Rarely": 1,
+      "Never": 0,
+      "-1": null
+    },
+    "future_vaccine": {
+      "Yes, definitely": 4,
+      "Probably": 3,
+      "Unsure": 2,
+      "Probably not": 1,
+      "No, definitely not": 0,
+      "-1": null
+    }
+  }
+}

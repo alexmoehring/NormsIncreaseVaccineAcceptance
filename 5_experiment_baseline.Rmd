@@ -1,0 +1,343 @@
+---
+title: "Initial analysis of randomized exposure to descriptive norms"
+output:
+  html_document:
+    df_print: paged
+---
+
+This is mainly oriented to testing that the treatment as measured is correctly randomized and for differential attrition.
+
+```{r}
+library(readr)
+library(lfe)
+library(estimatr)
+library(dplyr)
+library(ggplot2)
+library(broom)
+library(tidyr)
+library(stringr)
+theme_set(theme_bw())
+library(ggridges)
+options(digits = 2, width = 110)
+library(rjson)
+library(lme4)
+library(broom.mixed)
+library(foreach)
+library(forcats)
+```
+
+
+```{r}
+treatment_colors = c(
+  "broad" = "#093469",
+  "narrow" = "#92C2FC"
+)
+
+treatment_labels = c(
+  "broad" = "Broad (\"Yes\" + \"Don't know\")",
+  "narrow" = "Narrow (\"Yes\")"
+)
+```
+
+
+```{r}
+d2 = readr::read_csv(
+  file.path("data/analysis_data.csv")
+)
+```
+
+## Analysis of reported descriptive norms (covariates / mediators)
+
+Here looking only at pre-treatment norms. How many people are between the high and low norm numbers?
+
+
+```{r}
+d_country_vaccine_acceptance = d2 %>% 
+  group_by(country) %>%
+  filter(!is.na(vaccine_accept)) %>%
+  summarise(
+    n = n(),
+    vaccine_accept_country_frac_yes = weighted.mean(vaccine_accept == 2, weight_full_survey, na.rm = T),
+    vaccine_accept_country_frac_yes_dk = weighted.mean(vaccine_accept >= 1, weight_full_survey, na.rm = T)
+  )
+
+
+d2 = d2 %>%
+  inner_join(
+    d_country_vaccine_acceptance %>%
+      select(
+        country,
+        vaccine_accept_country_frac_yes,
+        vaccine_accept_country_frac_yes_dk
+        ))
+
+# d_treatment_vals = d2 %>%
+#   group_by(
+#     country,
+#     vaccine_accept_country_frac_yes,
+#     survey_information_behavior,
+#     survey_information_level,
+#     survey_information_value
+#     ) %>%
+#   summarise(
+#     n = n(),
+#     vaccine_accept_yes = weighted.mean(vaccine_accept == 2, weight_full_survey)
+#   ) %>%
+#   mutate(
+#     survey_information_level = factor(ifelse(
+#       survey_information_level == "high",
+#       "broad",
+#       "narrow"
+#       ))
+#   )
+```
+```{r}
+code_norms = function(x, low, high) {
+  low = as.integer(low)
+  high = as.integer(high)
+  ifelse(
+    is.na(x) | is.na(low) | is.na(high), NA,
+    ifelse(
+      x < low, "below",
+      ifelse(
+        x > high, "above", "between"
+      )
+    )
+  )
+}
+
+d2 = d2 %>%
+  mutate(
+    norms_vaccine_pre_bucket_overall = code_norms(
+      norms_vaccine, # TODO pre only?
+      100 * vaccine_accept_country_frac_yes,
+      100 * vaccine_accept_country_frac_yes_dk
+      )
+  )
+```
+
+
+
+```{r}
+d2 %>% 
+  mutate(
+    norms_vaccine_pre_bucket_overall = factor(
+        norms_vaccine_pre_bucket_overall,
+        levels = c("below", "between", "above"),
+        labels = c("below narrow %", "between narrow and broad %", "above broad %")
+      )
+  ) %>%
+ggplot(
+  aes(x = norms_vaccine_pre,
+      y = reorder(country, vaccine_accept_country_frac_yes),
+      fill = norms_vaccine_pre_bucket_overall,
+      weight = weight_full_survey
+  )
+) +
+  geom_density_ridges_gradient(
+    stat = "binline", breaks = seq(0, 100, by = 5),
+    scale = 1.6,
+    rel_min_height = 0.01,
+    color = "#444444",
+    lwd = .2
+    ) +
+  scale_fill_manual(
+    name = "Belief compared with country-wide descriptive norm",
+    values = c("#e66101", "#fdb863", "#80cdc1")
+    ) +
+  theme_ridges() +
+  guides(fill = guide_legend(title.position = "top")) +
+  theme(
+    legend.position = c(-.3, -.2), #"bottom",
+    legend.text = element_text(size = 9),
+    legend.title = element_text(size = 11),
+    legend.justification = "left",
+    legend.direction = "horizontal",
+    plot.margin = unit(c(1, 1, 5, 1), "lines")
+    ) +
+  scale_x_continuous(
+    position = "bottom",
+    limits = c(0, 100),
+    expand = c(0, 0)
+    ) +
+  #xlab(str_wrap("Out of 100 people in your community, how many do you think would take a COVID-19 vaccine if it were made available?", 60)) +
+  xlab("Belief about community descriptive norm") +
+  ylab(NULL)
+
+ggsave("norms_experiment/figs/vaccine_norms_pre_by_country_colored_hist.pdf", width = 5, height = 7)
+tmp <- ggplot_build(last_plot())$data
+write.csv2(tmp, file.path(getwd(), "norms_experiment/figs/vaccine_norms_pre_by_country_colored_hist.txt"))
+```
+
+
+
+```{r}
+d_vaccine_acceptance_by_norms = d2 %>%
+  filter(!is.na(vaccine_accept), !is.na(norms_vaccine_pre)) %>%
+  mutate(
+    norms_vaccine_pre_bucket = cut(
+      norms_vaccine_pre,
+      right = FALSE,
+      c(0, seq(10, 90, 10), Inf)
+      )
+  ) %>%
+  group_by(norms_vaccine_pre_bucket, vaccine_accept) %>%
+  summarise(
+    w = sum(weight_full_survey)
+  ) %>%
+  group_by(norms_vaccine_pre_bucket) %>%
+  mutate(
+    weighted_prop = w / sum(w)
+  )
+  
+vaccine_accept_colors = c(
+  "#4C3F30", "#EAEAEA", "#6DB581"
+)
+
+d2 %>%
+  filter(!is.na(vaccine_accept), !is.na(norms_vaccine_pre)) %>%
+ggplot(
+  aes(x = norms_vaccine_pre, fill = factor(vaccine_accept), weight = weight_full_survey)
+) +
+  geom_histogram(
+    breaks = 0:10 * 10,
+    position = "fill",
+    alpha = .62
+    ) +
+  scale_x_continuous(
+    breaks = 0:100 * 10,
+    minor_breaks = NULL,
+    limits = c(0, 100), expand = c(0, 0)
+  ) +
+  scale_y_continuous(
+    breaks = seq(0, 1, .25),
+    minor_breaks = NULL,
+    labels = scales::percent,
+    limits = c(0, 1), expand = c(0, 0)
+  ) +
+  scale_fill_manual(
+    values = vaccine_accept_colors,
+    guide = NULL
+  ) +
+  xlab("Beliefs about descrptive norms") +
+  ylab(NULL) +
+  theme(plot.margin=unit(rep(10, 4),"pt"))
+
+ggsave(file.path(getwd(), "norms_experiment/figs/vaccine_acceptance_by_norms.pdf"), width = 3, height = 2)
+tmp <- ggplot_build(last_plot())$data
+write.csv2(tmp, file.path(getwd(), "norms_experiment/figs/vaccine_acceptance_by_norms.txt"))
+```
+
+Break out by country, for SI
+```{r}
+d2 %>%
+  filter(!is.na(vaccine_accept), !is.na(norms_vaccine_pre)) %>%
+ggplot(
+  aes(x = norms_vaccine_pre, fill = factor(vaccine_accept), weight = weight_full_survey)
+) +
+  facet_wrap(~ country) +
+  geom_histogram(
+    breaks = 0:10 * 10,
+    position = "fill",
+    alpha = .62
+    ) +
+  scale_x_continuous(
+    breaks = seq(20, 100, 20),
+    minor_breaks = NULL,
+    limits = c(0, 100), expand = c(0, 0)
+  ) +
+  scale_y_continuous(
+    breaks = seq(0, 1, .25),
+    minor_breaks = NULL,
+    labels = scales::percent,
+    limits = c(0, 1), expand = c(0, 0)
+  ) +
+  scale_fill_manual(
+    values = vaccine_accept_colors,
+    guide = NULL
+  ) +
+  xlab("Beliefs about descrptive norms") +
+  ylab(NULL)
+
+ggsave("norms_experiment/figs/vaccine_acceptance_by_norms_by_country.pdf", width = 9, height = 10)
+tmp <- ggplot_build(last_plot())$data
+write.csv2(tmp, file.path(getwd(), "norms_experiment/figs/vaccine_acceptance_by_norms_by_country.txt"))
+
+```
+
+```{r}
+va = readr::read_tsv(
+  "data/data_for_vaccine_analysis.txt"
+)
+```
+
+
+```{r}
+vas = va %>%
+  mutate(
+    vaccine_accept = na_if(vaccine_accept, "-1"),
+    wave = as.integer(gsub("wave", "", wave))
+  ) %>%
+  filter(
+    !is.na(vaccine_accept),
+         !is.na(weight_demo)
+    ) %>%
+  group_by(country, wave, vaccine_accept) %>%
+  summarise(
+    w = sum(weight_demo)
+  ) %>%
+  group_by(country, wave) %>%
+  mutate(
+    prop = w / sum(w),
+    prop_yes = prop[vaccine_accept == "Yes"]
+  ) %>%
+  ungroup() %>%
+  mutate(
+    country = reorder(country, prop_yes, min)
+  )
+
+```
+
+```{r}
+ggplot(
+  aes(x = wave, y = prop, fill = vaccine_accept),
+  data = vas
+) +
+  facet_grid( ~ country) +
+  geom_area(alpha = .62) +
+  geom_text(
+    data = vas %>% group_by(country) %>% summarise(m = min(prop_yes)),
+    aes(label = country, y = m - .006, x = 8),
+    inherit.aes = FALSE,
+    size = 3.6, hjust = "right",
+    angle = 90
+  ) +
+  scale_fill_manual(
+    values = vaccine_accept_colors,
+    guide = NULL
+  ) +
+  scale_y_continuous(
+    labels = scales::percent_format(accuracy = 1L),
+    breaks = seq(0, 1, by = .1),
+    minor_breaks = NULL
+    ) +
+  scale_x_continuous(breaks = NULL, minor_breaks = NULL) +
+  xlab("Survey wave (July 2020 through February 2021), by country") +
+  ylab("") +
+  theme_minimal() +
+  theme(
+    panel.spacing = unit(0, "lines"),
+    axis.title.x=element_blank(),
+    axis.text.x=element_blank(),
+    axis.ticks.x=element_blank(),
+    strip.text = element_blank()
+  )
+
+ggsave("norms_experiment/figs/vaccine_acceptance_time_series_by_country_ggplot.pdf",
+       width = 8.5, height = 5)
+tmp <- ggplot_build(last_plot())$data[[1]]
+print(tmp)
+write.csv2(tmp, file.path(getwd(), "norms_experiment/figs/vaccine_acceptance_time_series_by_country_ggplot.txt"))
+```
+
+
