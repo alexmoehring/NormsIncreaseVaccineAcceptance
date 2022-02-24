@@ -4,6 +4,8 @@ This repository contains replication materials for Moehring et al (2021).
 ## Citation
 Moehring, Alex, Avinash Collis, Kiran Garimella, M. Amin Rahimian, Sinan Aral, and Dean Eckles. "Surfacing norms to increase vaccine acceptance." Available at SSRN 3782082 (2021).
 
+[![DOI](https://zenodo.org/badge/437312905.svg)](https://zenodo.org/badge/latestdoi/437312905)
+
 ## Data availability
 Documentation of the COVID-19 Beliefs, Behaviors, and Norms survey instrument and aggregated data from the survey are publicly
 available at https://covidsurvey.mit.edu. To be able to replicate the results, you must 
