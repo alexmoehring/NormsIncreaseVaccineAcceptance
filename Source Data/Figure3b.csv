@@ -1,15 +1,7 @@
-,Estimate,SE,term,group,sort_order,hte_var
-Norms: Above,0.0225561336553289,0.01727010489932,tmp_treatment[T.high],Broad,Above,baseline_belief_partition_vaccine_pre_both
-Norms: Above,0.026008614334927,0.0165089545020449,tmp_treatment[T.low],Narrow,Above,baseline_belief_partition_vaccine_pre_both
-Norms: Between,0.0409496823908036,0.0150444611636176,tmp_treatment[T.high],Broad,Between,baseline_belief_partition_vaccine_pre_both
-Norms: Between,0.0373795723968494,0.0153150116084922,tmp_treatment[T.low],Narrow,Between,baseline_belief_partition_vaccine_pre_both
-Norms: Under,0.043181727964765,0.0159817421553517,tmp_treatment[T.high],Broad,Under,baseline_belief_partition_vaccine_pre_both
-Norms: Under,0.0489023733599126,0.0151991018521862,tmp_treatment[T.low],Narrow,Under,baseline_belief_partition_vaccine_pre_both
-Vaccine: No,0.0405483341226605,0.0178542489647979,tmp_treatment[T.high],Broad,0.0,vaccine_accept_pre
-Vaccine: No,0.016933970401956,0.0168227191228319,tmp_treatment[T.low],Narrow,0.0,vaccine_accept_pre
-Vaccine: Don't know,0.070679291166345,0.0113085873054323,tmp_treatment[T.high],Broad,1.0,vaccine_accept_pre
-Vaccine: Don't know,0.0522624161628179,0.0114262711410805,tmp_treatment[T.low],Narrow,1.0,vaccine_accept_pre
-Vaccine: Yes,0.0290524181123511,0.0063130172811798,tmp_treatment[T.high],Broad,2.0,vaccine_accept_pre
-Vaccine: Yes,0.0266801199119561,0.0062626202586553,tmp_treatment[T.low],Narrow,2.0,vaccine_accept_pre
-Average,0.0392887842761324,0.0057566824621841,tmp_treatment[T.high],Broad,,vaccine_accept_pre
-Average,0.0325359443417038,0.0056567418707093,tmp_treatment[T.low],Narrow,,vaccine_accept_pre
+,Estimate,SE,group
+masks,0.011456621,0.005886197,Broad
+masks,0.021316597,0.005440843,Narrow
+dist,0.004451466,0.013985867,Broad
+dist,-0.017328593,0.013817208,Narrow
+vaccine,0.039288784,0.005756682,Broad
+vaccine,0.032535944,0.005656742,Narrow
