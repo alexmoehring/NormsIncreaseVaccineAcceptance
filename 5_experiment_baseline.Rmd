@@ -165,7 +165,10 @@ ggplot(
   ylab(NULL)
 
 ggsave("norms_experiment/figs/vaccine_norms_pre_by_country_colored_hist.pdf", width = 5, height = 7)
-tmp <- ggplot_build(last_plot())$data
+tmp <- ggplot_build(last_plot())$data[[1]]
+#tmp["country_panel"] = tmp$y
+#tmp = tmp[, c("fill", "x", "xmin", "xmax", "density", "country_panel")]
+#tmp$density = tmp$density / 1.2  # scale
 write.csv2(tmp, file.path(getwd(), "norms_experiment/figs/vaccine_norms_pre_by_country_colored_hist.txt"))
 ```
 
