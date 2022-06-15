@@ -1,0 +1,7 @@
+,Estimate,SE,term,group
+masks,1.2496233960189977,0.22321053291331383,tmp_treatment[T.high],Broad
+masks,0.6815982639868238,0.2165420912734578,tmp_treatment[T.low],Narrow
+dist,0.7782638420300071,0.47878920441991873,tmp_treatment[T.high],Broad
+dist,-0.16680842994490677,0.477241101304148,tmp_treatment[T.low],Narrow
+vaccine,2.718846209303057,0.19762831532633549,tmp_treatment[T.high],Broad
+vaccine,0.8375750050307992,0.19798893539427537,tmp_treatment[T.low],Narrow

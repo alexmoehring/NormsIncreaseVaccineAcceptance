@@ -1,0 +1,9 @@
+,Estimate,SE,term,group,sort_order
+Above,-0.020597710676118375,0.046558393209448455,tmp_treatment[T.high],Broad,Above
+Above,-0.004683924427228131,0.0306622380504246,tmp_treatment[T.low],Narrow,Above
+Between,-0.056578287466049836,0.03142738048586821,tmp_treatment[T.high],Broad,Between
+Between,-0.021281243946276163,0.029819091689101403,tmp_treatment[T.low],Narrow,Between
+Under,0.0033258791654789776,0.06226565607634692,tmp_treatment[T.high],Broad,Under
+Under,-0.07759000383404888,0.05838789613546315,tmp_treatment[T.low],Narrow,Under
+Average,0.0044514659056263724,0.01398586742753966,tmp_treatment[T.high],Broad,
+Average,-0.017328593296048373,0.013817207882251416,tmp_treatment[T.low],Narrow,

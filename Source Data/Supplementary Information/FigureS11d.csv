@@ -1,0 +1,6 @@
+,Estimate,SE,term,group,sort_order
+ 20.0,-0.028303365532680366,0.03279523668438705,tmp_treatment[T.treated],treated, 20.0
+ 40.0,0.03884757778018389,0.016855540350892397,tmp_treatment[T.treated],treated, 40.0
+ 60.0,0.06436451205269961,0.01923083849329383,tmp_treatment[T.treated],treated, 60.0
+ 80.0,0.10039540033263626,0.058245901164114156,tmp_treatment[T.treated],treated, 80.0
+Average,0.05425552055247369,0.012452214901589254,tmp_treatment[T.treated],treated,

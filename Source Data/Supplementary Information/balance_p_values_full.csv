@@ -1,0 +1,78 @@
+,p-val,x
+news sources trust government health authorities,0.007989659029953047,0
+news medium trust television,0.025299734840128162,1
+news sources local health workers,0.026793097064735327,2
+news medium trust messaging apps,0.03744236789626813,3
+news sources trust politicians,0.040634879390125105,4
+news sources trust world health organization,0.04365215924972295,5
+news sources journalists,0.04889429684083985,6
+locations would attend places of worship,0.05609071809965901,7
+news medium trust newspapers,0.06378903081063844,8
+news sources trust scientists,0.06392305331433196,9
+own health,0.06775637652382682,10
+news sources trust ordinary people i know personally,0.07708232518714474,11
+news medium newspapers,0.07747627103534947,12
+country management,0.08198230809758039,13
+news medium online sources,0.08273470994966692,14
+infection severity,0.0828638111950128,15
+news medium radio,0.08545618790586153,16
+news medium trust online sources,0.10903552133060816,17
+measures taken wearing a face mask or covering,0.1250899279638415,18
+news sources trust journalists,0.1443605342307956,19
+risk community,0.1641363936969421,20
+effect hand washing,0.19498116981852465,21
+knowledge existing treatments,0.20988038451698288,22
+news sources trust local health workers,0.2190954468367452,23
+norms dist,0.22119311719214352,24
+age,0.22347447312957003,25
+measures taken cleaning or disinfecting surfaces,0.2737684378255556,26
+locations would attend parks and beaches,0.33593156118767986,27
+news medium messaging apps,0.35263983063833526,28
+gender,0.40146957221194346,29
+measures taken taking herbal supplements,0.40196943981440436,30
+know positive case,0.40494881906314817,31
+measures taken using homeopathic remedies,0.415212386203606,32
+measures taken eating garlic,0.415522122860154,33
+info exposure past week,0.43937341896871884,34
+community action norms,0.4577240784430413,35
+education,0.4679535492004562,36
+news medium trust radio,0.4709311683177868,37
+measures taken cover coughs,0.47898720348409884,38
+measures taken using antibiotics,0.4805650558042073,39
+news sources ordinary people i dont know personally,0.49259171534371693,40
+measures taken none of these,0.49414262273735576,41
+community action importance,0.4984874599952861,42
+control infection,0.5148928401802819,43
+prevention hand washing,0.5262386575292155,44
+employed 2020,0.541662868213203,45
+measures taken caution opening mail,0.5574301809231852,46
+news sources scientists,0.5718252212248975,47
+news sources ordinary people i know personally,0.5777374889559783,48
+measures taken cleaning or disinfecting a mobile phone,0.5790596470274878,49
+info exposure more less wanted,0.6140937316898885,50
+locations would attend schools,0.6210414156454118,51
+locations would attend retail shops,0.6267675877363788,52
+locations would attend restaurants,0.6358256907120698,53
+locations would attend places of employment,0.6367198579614585,54
+risk infection,0.6375139785555413,55
+effect mask,0.6405950083782463,56
+news sources trust ordinary people i do not know personally,0.6434354910375166,57
+norms masks,0.6484058147250642,58
+measures taken washing hands,0.6513584900476426,59
+news sources politicians,0.6832428240742094,60
+news sources world health organization,0.6904267604888052,61
+measures taken getting the flu vaccine,0.6908227963067641,62
+locations would attend performances and sporting events,0.736367758383791,63
+measures taken avoid touching face,0.7565388350417181,64
+prevention distancing,0.7692191956919676,65
+distancing importance,0.8025651192118942,66
+measures taken meter distance,0.8362081197753817,67
+norms vaccine,0.8366645964315214,68
+vaccine accept,0.8479267683598536,69
+locations would attend health care facilities,0.8508156643697579,70
+community management,0.8777976662426119,71
+measures taken avoid sick,0.9014731963971119,72
+news medium television,0.910464855401401,73
+news sources government health authorities,0.970473162393549,74
+measures taken isolation,0.9880178853511403,75
+prevention mask,0.9993730248571573,76
