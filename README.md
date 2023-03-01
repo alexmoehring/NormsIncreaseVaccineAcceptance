@@ -1,5 +1,5 @@
 # Providing normative information increases intentions to accept a COVID-19 vaccine
-This repository contains replication materials for Moehring et al (2021).
+This repository contains replication materials for Moehring et al (2023).
 
 ## Citation
 Moehring, Alex, Avinash Collis, Kiran Garimella, M. Amin Rahimian, Sinan Aral, and Dean Eckles. "Providing normative information increases intentions to accept a COVID-19 vaccine." Nature Communications 14, no. 1 (2023): 126.
