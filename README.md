@@ -1,8 +1,10 @@
-# Surfacing norms to increase vaccine acceptance
+# Providing normative information increases intentions to accept a COVID-19 vaccine
 This repository contains replication materials for Moehring et al (2021).
 
 ## Citation
-Moehring, Alex, Avinash Collis, Kiran Garimella, M. Amin Rahimian, Sinan Aral, and Dean Eckles. "Surfacing norms to increase vaccine acceptance." Available at SSRN 3782082 (2021).
+Moehring, Alex, Avinash Collis, Kiran Garimella, M. Amin Rahimian, Sinan Aral, and Dean Eckles. "Providing normative information increases intentions to accept a COVID-19 vaccine." Nature Communications 14, no. 1 (2023): 126.
+
+Previously titled "Surfacing norms to increase vaccine acceptance.".
 
 [![DOI](https://zenodo.org/badge/437312905.svg)](https://zenodo.org/badge/latestdoi/437312905)
 
